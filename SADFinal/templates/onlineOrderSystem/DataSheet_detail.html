@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>規格單: {{ data_sheet.IDName }}</h1>
+  <button onclick="location.href='{% url 'datasheet_update' data_sheet.pk %}'">更新規格單進度</button>
+  <br><br>
+  <p><strong>所屬訂單ID:</strong> {{ data_sheet.orderFormID }}</p>
+  <p><strong>規格單ID:</strong> {{ data_sheet.id }}</p>
+  <p><strong>員工ID:</strong> {{ data_sheet.staffID }}</p>
+  <p><strong>進度:</strong> {{ data_sheet.progress }}</p>
+  <p><strong>布邊1:</strong> {{ data_sheet.buBien1 }}</p>
+  <p><strong>布邊2:</strong> {{ data_sheet.buBien2 }}</p>
+  <p><strong>布身:</strong> {{ data_sheet.buSien }}</p>
+  <p><strong>機上緯密:</strong> {{ data_sheet.weiMi }}</p>
+  <p><strong>筘幅:</strong> {{ data_sheet.koFu }}</p>
+  <p><strong>整經長:</strong> {{ data_sheet.length }}</p>
+  <p><strong>經紗排列:</strong> {{ data_sheet.arrangement }}</p>
+  <p><strong>穿法:</strong> {{ data_sheet.sewingMethod }}</p>
+{% endblock %}
+

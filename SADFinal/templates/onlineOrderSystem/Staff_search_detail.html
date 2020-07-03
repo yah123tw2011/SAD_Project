@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ staff_search_detail.IDName }}</h1>
+  <br>
+  <p><strong>員工ID:</strong> {{ staff_search_detail.id }}</p>
+  <p><strong>姓名:</strong> {{ staff_search_detail.name }}</p>
+  <p><strong>電話:</strong> {{ staff_search_detail.tel }}</p>
+  <p><strong>地址:</strong> {{ staff_search_detail.address }}</p>
+  <p><strong>性別:</strong> {{ staff_search_detail.gender}}</p>
+  <p><strong>生日:</strong> {{ staff_search_detail.birthdate }}</p>
+  <p><strong>帳號:</strong> {{ staff_search_detail.account }}</p>
+  <br>
+  <h5>負責之規格單ID</h5>
+  <ul>
+      {% for datasheet in DataSheet %}
+          {% if staff_search_detail.IDName == datasheet.staffID %}
+            <li>
+              <a href="/onlineOrderSystem/datasheet/{{datasheet.id}}">{{ datasheet.IDName }}</a>
+            </li>
+          {% endif %}
+      {% endfor %}
+  </ul>
+{% endblock %}

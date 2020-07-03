@@ -1,0 +1,28 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1>員工查詢</h1>
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">查詢</button>
+  </form>
+
+ <br><br>
+
+  <table class="col-md-12 score" style="text-align:center">
+	<thead>
+		<tr>
+			<th>員工ID</th>
+			<th>電話</th>
+		</tr>
+	</thead>
+	<tbody>
+  	{% for user in filter.qs %}
+		<tr>
+			<td><a href="/onlineOrderSystem/staff_search/{{user.id}}">{{ user.IDName }}</td>
+			<td>{{ user.tel }}</td>
+		</tr>
+  	{% endfor %}
+ 	 </tbody>
+  </table>
+{% endblock %}

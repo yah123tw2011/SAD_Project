@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+   <h1>規格單資料庫</h1>
+   {% if datasheet_list %}
+  <br>
+  <h4>請選取規格單</h4>
+  <table class="col-md-12 score" style="text-align:center">
+	<thead>
+		<tr>
+			<th>規格單ID</th>
+			<th>所屬訂單ID</th>
+		</tr>
+	</thead>
+	<tbody>
+  	{% for datasheet in datasheet_list %}
+		<tr>
+			<td><a href='/onlineOrderSystem/datasheet/{{datasheet.id}}'>{{ datasheet.IDName }}</a></td>
+			<td>({{datasheet.orderFormID}})</td>
+		</tr>
+  	{% endfor %}
+ 	 </tbody>
+  </table>
+<!--
+   <ul>
+     {% for datasheet in datasheet_list %}
+       <li>
+         <a href="">{{ datasheet.IDName }}</a> ({{datasheet.orderFormID}})
+       </li>
+     {% endfor %}
+   </ul> 
+-->
+
+   {% else %}
+     <p>無資料。</p>
+   {% endif %}
+
+ {% endblock %}
+
+
+
