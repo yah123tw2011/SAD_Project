@@ -2,8 +2,8 @@
 
 An Internal Operation Database System 
 
-After running the program, enter your port number to enable connection via devices with the same wifi source. 
+To run the program, 
 
-else 
+enter your port number to enable connection via devices with the same wifi source: python3 runserver_outside.py 8000
 
-just enter: python3 manage.py runserver
+else just enter: python3 manage.py runserver
